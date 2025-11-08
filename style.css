@@ -92,7 +92,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--primary-color);
+  background-color: #e5d4a1;
 }
 
 .nav__logo  img {
@@ -118,7 +118,7 @@ nav {
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
-  background-color: var(--primary-color);
+  background-color: #e5d4a1;
   transition: transform 0.5s;
   z-index: -1;
 }
@@ -168,7 +168,64 @@ header::before {
   flex-direction: column;
   justify-content: center;
 }
+.buttonregister {
+  display: flex;
+  justify-content: center; /* center on small screens */
+  align-items: center;
+  margin-top: 2.5rem; /* spacing from header content */
+}
+.buttonregister button {
+  width: 250px;
+  height: 80px;
+  border-radius: 30px;
+  background: rgba(189, 185, 174, 0.151); /* semi-transparent for blur */
+  color: #e5d4a1; /* golden Harry Potter theme */
+  font-size: 20px;
+  font-family: 'Cinzel Decorative', serif; /* magical/ornate font */
+  font-weight: 400;
+  border: 2px solid #ffd700;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4),
+              0 0 20px rgba(255, 215, 0, 0.5); /* golden glow */
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.7); /* subtle magical text glow */
+}
 
+.buttonregister button:hover {
+  background: rgba(255, 215, 0, 0.1); /* slight golden hover */
+  transform: scale(1.08) rotate(-1deg); /* slight mystical shake */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5),
+              0 0 30px rgba(255, 215, 0, 0.8);
+}
+@media (max-width: 768px) {
+  .buttonregister {
+    justify-content: center; /* keep centered */
+    margin-top: 3rem;
+  }
+
+  .buttonregister button {
+    width: 70%; /* fit smaller screens */
+    height: 70px;
+    font-size: 16px; /* smaller text for mobile */
+  }
+}
+
+/* 💻 Larger screens */
+@media (min-width: 769px) {
+  .buttonregister {
+    justify-content: center; /* keep on the right for desktop */
+    margin-top: 2rem;
+   margin-left: 500px;
+  }
+
+  .buttonregister button {
+    width: 200px;
+    height: 100px;
+    font-size: 28px;
+  }
+}
 .gallery__container {
   max-width: 1500px;
 }
@@ -225,9 +282,7 @@ header::before {
    font-size: 24px;
 }
 
-.service__btn {
-  text-align: center;
-}
+
 
 .instagram__container {
   max-width: 1500px;
@@ -270,9 +325,9 @@ header::before {
 }
 
 .footer__logo img {
-  max-width: 150px;
-  border-radius: 200px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
+  
 }
 
 .footer__socials {
@@ -339,7 +394,7 @@ header::before {
   }
 }
 
-@media (width > 768px) {
+@media (min-width: 768px) {
   nav {
     position: relative;
     padding: 2rem 1rem 1rem;
@@ -370,6 +425,7 @@ header::before {
     flex-direction: row;
     background-color: transparent;
     transform: none !important;
+    display: flex; 
   }
 
   .nav__links a {
@@ -405,6 +461,8 @@ header::before {
     text-align: left;
     font-size: 5rem;
   }
+  
+
 
   .service__container :is(.section__header, .section__subheader) {
     text-align: left;
